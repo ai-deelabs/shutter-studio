@@ -1,0 +1,30 @@
+{
+  "slug": "shutter-studio",
+  "brand_dna": "Shutter Studio is a photography studio specializing in portrait and commercial advertising photography. The brand features a minimal black and white aesthetic that conveys professionalism and elegance. The design emphasizes clean lines, high-quality visual presentation of photography work, and a sophisticated approach that highlights the studio's expertise in capturing compelling imagery.",
+  "variant_count": 2,
+  "client_id": null,
+  "tags": [
+    "photography",
+    "studio",
+    "portrait",
+    "commercial",
+    "minimal",
+    "black-white"
+  ],
+  "generated_at": "2026-05-28T19:21:18Z",
+  "prompt_template": "variant.md",
+  "actions": [
+    {
+      "type": "generate",
+      "at": "2026-05-28T19:24:30Z",
+      "variants": {
+        "v1": {
+          "size_bytes": 26534
+        },
+        "v2": {
+          "size_bytes": 31404
+        }
+      }
+    }
+  ]
+}

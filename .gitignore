@@ -1,0 +1,5 @@
+meta.json
+.claude-*.log
+.omc/
+edit-sessions/
+# project.json and .prompts/ are tracked (generation metadata + audit trail)
