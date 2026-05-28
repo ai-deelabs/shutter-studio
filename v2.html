@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shutter Studio — Portrait &amp; Commercial Photography</title>
+<title data-lang-th="Shutter Studio — ภาพถ่ายบุคคลและเชิงพาณิชย์" data-lang-en="Shutter Studio — Portrait &amp; Commercial Photography">Shutter Studio — ภาพถ่ายบุคคลและเชิงพาณิชย์</title>
+<meta name="description" data-lang-th="Shutter Studio — สตูดิโอถ่ายภาพบุคคลและเชิงพาณิชย์แนวขาวดำในบรูคลิน สร้างสรรค์ภาพขาวดำที่ตั้งใจในทุกเฟรมเพื่อคงคุณค่าอย่างยาวนาน" data-lang-en="Shutter Studio — a monochrome portrait and commercial photography studio in Brooklyn, crafting deliberate black-and-white images built to last." content="Shutter Studio — สตูดิโอถ่ายภาพบุคคลและเชิงพาณิชย์แนวขาวดำในบรูคลิน สร้างสรรค์ภาพขาวดำที่ตั้งใจในทุกเฟรมเพื่อคงคุณค่าอย่างยาวนาน" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/lucide@0.460.0"></script>
 <style>
   :root{
@@ -16,8 +17,8 @@
     --smoke:#8c8881;
     --line:rgba(12,12,12,.16);
     --line-soft:rgba(12,12,12,.08);
-    --serif:'Cormorant Garamond', Georgia, serif;
-    --sans:'Inter', system-ui, sans-serif;
+    --serif:'Cormorant Garamond', 'Noto Serif Thai', Georgia, serif;
+    --sans:'Inter', 'Noto Sans Thai', 'Sukhumvit Set', system-ui, sans-serif;
     --pad:clamp(20px,5vw,80px);
     --maxw:1320px;
   }
@@ -31,6 +32,8 @@
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
+    word-break:break-word;
+    overflow-wrap:break-word;
   }
   img{display:block;max-width:100%;filter:grayscale(1) contrast(1.05)}
   a{color:inherit;text-decoration:none}
@@ -68,6 +71,7 @@
   .navlinks a{font-size:12.5px;letter-spacing:.06em;color:var(--ink);position:relative;padding:4px 0}
   .navlinks a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--ink);transition:width .35s ease}
   .navlinks a:hover::after{width:100%}
+  .nav-right{display:flex;align-items:center;gap:clamp(16px,2vw,28px)}
   .nav-cta{
     border:1px solid var(--ink);padding:10px 20px;font-size:12px;letter-spacing:.08em;
     text-transform:uppercase;font-weight:500;transition:background .3s,color .3s;
@@ -75,6 +79,17 @@
   .nav-cta:hover{background:var(--ink);color:var(--paper)}
   .nav-cta::after{display:none}
   .burger{display:none;background:none;border:none;cursor:pointer;color:var(--ink)}
+
+  /* ---------- Language switch ---------- */
+  .lang-switch{display:inline-flex;align-items:center;gap:7px}
+  .lang-btn{
+    background:none;border:none;cursor:pointer;color:var(--smoke);
+    font-family:var(--sans);font-size:12px;letter-spacing:.08em;font-weight:500;
+    text-transform:uppercase;padding:4px 2px;transition:color .3s;
+  }
+  .lang-btn:hover{color:var(--ink)}
+  .lang-btn.active{color:var(--ink)}
+  .lang-sep{color:var(--line);font-size:11px;user-select:none}
 
   /* ---------- Hero ---------- */
   .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding-bottom:clamp(36px,6vh,72px);padding-top:140px}
@@ -292,66 +307,73 @@
       <b>Shutter</b><small>Studio</small>
     </a>
     <nav class="navlinks">
-      <a href="#work">Work</a>
-      <a href="#services">Services</a>
-      <a href="#studio">Studio</a>
-      <a href="#process">Process</a>
+      <a href="#work" data-lang-th="ผลงาน" data-lang-en="Work">ผลงาน</a>
+      <a href="#services" data-lang-th="บริการ" data-lang-en="Services">บริการ</a>
+      <a href="#studio" data-lang-th="สตูดิโอ" data-lang-en="Studio">สตูดิโอ</a>
+      <a href="#process" data-lang-th="ขั้นตอนการทำงาน" data-lang-en="Process">ขั้นตอนการทำงาน</a>
     </nav>
-    <a href="#contact" class="nav-cta">Book a Session</a>
-    <button class="burger" id="burger" aria-label="Open menu"><i data-lucide="menu"></i></button>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language / ภาษา">
+        <button type="button" class="lang-btn" data-lang="th">TH</button>
+        <span class="lang-sep">/</span>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="#contact" class="nav-cta" data-lang-th="จองเซสชัน" data-lang-en="Book a Session">จองเซสชัน</a>
+      <button class="burger" id="burger" aria-label="Open menu"><i data-lucide="menu"></i></button>
+    </div>
   </div>
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#work">Work</a>
-  <a href="#services">Services</a>
-  <a href="#studio">Studio</a>
-  <a href="#process">Process</a>
-  <a href="#contact">Book a Session</a>
-  <div class="mm-foot">Est. 2009 — Portrait &amp; Commercial</div>
+  <a href="#work" data-lang-th="ผลงาน" data-lang-en="Work">ผลงาน</a>
+  <a href="#services" data-lang-th="บริการ" data-lang-en="Services">บริการ</a>
+  <a href="#studio" data-lang-th="สตูดิโอ" data-lang-en="Studio">สตูดิโอ</a>
+  <a href="#process" data-lang-th="ขั้นตอนการทำงาน" data-lang-en="Process">ขั้นตอนการทำงาน</a>
+  <a href="#contact" data-lang-th="จองเซสชัน" data-lang-en="Book a Session">จองเซสชัน</a>
+  <div class="mm-foot" data-lang-th="ก่อตั้ง 2009 — ภาพถ่ายบุคคลและเชิงพาณิชย์" data-lang-en="Est. 2009 — Portrait &amp; Commercial">ก่อตั้ง 2009 — ภาพถ่ายบุคคลและเชิงพาณิชย์</div>
 </div>
 
 <!-- ===== Hero ===== -->
 <section class="hero wrap" id="top">
   <div class="hero-grid">
     <div class="hero-type">
-      <span class="eyebrow">Portrait &amp; Commercial Photography</span>
+      <span class="eyebrow" data-lang-th="ภาพถ่ายบุคคลและเชิงพาณิชย์" data-lang-en="Portrait &amp; Commercial Photography">ภาพถ่ายบุคคลและเชิงพาณิชย์</span>
       <h1>
-        <span class="thin">Light, framed</span>
-        Into <em>form</em>.
+        <span class="thin" data-lang-th="จัดวางแสง" data-lang-en="Light, framed">จัดวางแสง</span>
+        <span data-lang-th="สู่" data-lang-en="Into ">สู่</span><em data-lang-th="รูปทรง" data-lang-en="form">รูปทรง</em><span data-lang-th="" data-lang-en=".">.</span>
       </h1>
       <div class="hero-meta">
-        <p>A monochrome studio devoted to the quiet authority of a single, deliberate frame — portraits and campaigns made to last.</p>
+        <p data-lang-th="สตูดิโอแนวขาวดำที่ทุ่มเทให้กับพลังอันเงียบสงบของเฟรมเดียวที่ตั้งใจ — ภาพบุคคลและแคมเปญที่สร้างมาเพื่อคงอยู่ยาวนาน" data-lang-en="A monochrome studio devoted to the quiet authority of a single, deliberate frame — portraits and campaigns made to last.">สตูดิโอแนวขาวดำที่ทุ่มเทให้กับพลังอันเงียบสงบของเฟรมเดียวที่ตั้งใจ — ภาพบุคคลและแคมเปญที่สร้างมาเพื่อคงอยู่ยาวนาน</p>
         <div class="hero-stats">
-          <div class="stat"><div class="n">15</div><div class="l">Years</div></div>
-          <div class="stat"><div class="n">600+</div><div class="l">Sittings</div></div>
-          <div class="stat"><div class="n">40</div><div class="l">Brands</div></div>
+          <div class="stat"><div class="n">15</div><div class="l" data-lang-th="ปี" data-lang-en="Years">ปี</div></div>
+          <div class="stat"><div class="n">600+</div><div class="l" data-lang-th="เซสชัน" data-lang-en="Sittings">เซสชัน</div></div>
+          <div class="stat"><div class="n">40</div><div class="l" data-lang-th="แบรนด์" data-lang-en="Brands">แบรนด์</div></div>
         </div>
       </div>
     </div>
     <figure class="hero-figure">
       <img src="https://images.unsplash.com/photo-1779911915373-ebeed44faff4?w=900&h=1200&fit=crop" alt="Studio portrait of a figure emerging from darkness" loading="eager" />
-      <span class="tag">Frame No. 014 — Studio</span>
+      <span class="tag" data-lang-th="เฟรมที่ 014 — สตูดิโอ" data-lang-en="Frame No. 014 — Studio">เฟรมที่ 014 — สตูดิโอ</span>
     </figure>
   </div>
   <div class="hero-rule">
-    <span>Studio &mdash; Brooklyn, NY</span>
-    <a href="#work" class="scrollcue">Scroll to view <i data-lucide="arrow-down"></i></a>
+    <span data-lang-th="สตูดิโอ — Brooklyn, NY" data-lang-en="Studio — Brooklyn, NY">สตูดิโอ — Brooklyn, NY</span>
+    <a href="#work" class="scrollcue"><span data-lang-th="เลื่อนเพื่อชม" data-lang-en="Scroll to view">เลื่อนเพื่อชม</span> <i data-lucide="arrow-down"></i></a>
   </div>
 </section>
 
 <!-- ===== Statement ===== -->
 <section class="statement sec-pad wrap">
   <div class="statement-grid">
-    <p class="big reveal">We work in <em>black and white</em> because it removes everything but the truth of a face, a gesture, a product&rsquo;s edge.</p>
+    <p class="big reveal"><span data-lang-th="เราทำงานด้วยภาพ" data-lang-en="We work in ">เราทำงานด้วยภาพ</span><em data-lang-th="ขาวดำ" data-lang-en="black and white">ขาวดำ</em><span data-lang-th=" เพราะมันขจัดทุกสิ่งออกไป เหลือไว้เพียงความจริงของใบหน้า ท่วงท่า และเส้นสันของผลิตภัณฑ์" data-lang-en=" because it removes everything but the truth of a face, a gesture, a product’s edge."> เพราะมันขจัดทุกสิ่งออกไป เหลือไว้เพียงความจริงของใบหน้า ท่วงท่า และเส้นสันของผลิตภัณฑ์</span></p>
     <div class="statement-cols reveal">
       <div>
-        <h4>The Approach</h4>
-        <p>Every shoot begins with restraint. We strip the frame to its essentials — light, contrast, and intent — so the subject can carry the image entirely on its own.</p>
+        <h4 data-lang-th="แนวทางการทำงาน" data-lang-en="The Approach">แนวทางการทำงาน</h4>
+        <p data-lang-th="ทุกการถ่ายเริ่มต้นด้วยความยับยั้งชั่งใจ เราถอดเฟรมให้เหลือเพียงสิ่งสำคัญ — แสง คอนทราสต์ และเจตนา — เพื่อให้ตัวแบบถ่ายทอดภาพได้ด้วยตัวเองอย่างเต็มที่" data-lang-en="Every shoot begins with restraint. We strip the frame to its essentials — light, contrast, and intent — so the subject can carry the image entirely on its own.">ทุกการถ่ายเริ่มต้นด้วยความยับยั้งชั่งใจ เราถอดเฟรมให้เหลือเพียงสิ่งสำคัญ — แสง คอนทราสต์ และเจตนา — เพื่อให้ตัวแบบถ่ายทอดภาพได้ด้วยตัวเองอย่างเต็มที่</p>
       </div>
       <div>
-        <h4>The Result</h4>
-        <p>Imagery with the weight of permanence. Photographs built for portfolios, campaigns, and walls — never for the scroll-and-forget feed.</p>
+        <h4 data-lang-th="ผลลัพธ์" data-lang-en="The Result">ผลลัพธ์</h4>
+        <p data-lang-th="ภาพที่มีน้ำหนักแห่งความคงทน ภาพถ่ายที่สร้างขึ้นเพื่อพอร์ตโฟลิโอ แคมเปญ และผนังบ้าน — ไม่ใช่เพื่อฟีดที่เลื่อนผ่านแล้วลืม" data-lang-en="Imagery with the weight of permanence. Photographs built for portfolios, campaigns, and walls — never for the scroll-and-forget feed.">ภาพที่มีน้ำหนักแห่งความคงทน ภาพถ่ายที่สร้างขึ้นเพื่อพอร์ตโฟลิโอ แคมเปญ และผนังบ้าน — ไม่ใช่เพื่อฟีดที่เลื่อนผ่านแล้วลืม</p>
       </div>
     </div>
   </div>
@@ -362,46 +384,46 @@
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="eyebrow">Selected Work</span>
-        <h2 class="reveal">A studied collection of <em>frames</em>.</h2>
+        <span class="eyebrow" data-lang-th="ผลงานคัดสรร" data-lang-en="Selected Work">ผลงานคัดสรร</span>
+        <h2 class="reveal"><span data-lang-th="คอลเลกชันของ" data-lang-en="A studied collection of ">คอลเลกชันของ</span><em data-lang-th="เฟรม" data-lang-en="frames">เฟรม</em><span data-lang-th="ที่ผ่านการพินิจ" data-lang-en=".">ที่ผ่านการพินิจ</span></h2>
       </div>
-      <span class="sec-idx">01 / Portfolio</span>
+      <span class="sec-idx" data-lang-th="01 / พอร์ตโฟลิโอ" data-lang-en="01 / Portfolio">01 / พอร์ตโฟลิโอ</span>
     </div>
 
     <div class="gallery">
       <figure class="shot g-tall reveal">
         <img src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=700&h=930&fit=crop" alt="Portrait of a woman in monochrome" loading="lazy" />
-        <figcaption><span class="t">Adèle</span><span class="c">Portrait</span></figcaption>
+        <figcaption><span class="t">Adèle</span><span class="c" data-lang-th="บุคคล" data-lang-en="Portrait">บุคคล</span></figcaption>
       </figure>
       <figure class="shot g-wide reveal">
         <img src="https://images.unsplash.com/photo-1612242879330-cd06b2696e56?w=1000&h=714&fit=crop" alt="Commercial editorial seated figure" loading="lazy" />
-        <figcaption><span class="t">House &amp; Form</span><span class="c">Commercial</span></figcaption>
+        <figcaption><span class="t">House &amp; Form</span><span class="c" data-lang-th="เชิงพาณิชย์" data-lang-en="Commercial">เชิงพาณิชย์</span></figcaption>
       </figure>
       <figure class="shot g-sq reveal">
         <img src="https://images.unsplash.com/photo-1645561305502-63a9ba09ab09?w=620&h=620&fit=crop" alt="Fashion editorial in sunglasses and coat" loading="lazy" />
-        <figcaption><span class="t">Noir</span><span class="c">Editorial</span></figcaption>
+        <figcaption><span class="t">Noir</span><span class="c" data-lang-th="บทบรรณาธิการ" data-lang-en="Editorial">บทบรรณาธิการ</span></figcaption>
       </figure>
       <figure class="shot g-sq reveal">
         <img src="https://images.unsplash.com/photo-1558730234-d8b2281b0d00?w=620&h=620&fit=crop" alt="Black and white portrait of a man" loading="lazy" />
-        <figcaption><span class="t">Marius</span><span class="c">Portrait</span></figcaption>
+        <figcaption><span class="t">Marius</span><span class="c" data-lang-th="บุคคล" data-lang-en="Portrait">บุคคล</span></figcaption>
       </figure>
       <figure class="shot g-sq reveal">
         <img src="https://images.unsplash.com/photo-1596725668413-d91baf68d9ce?w=620&h=620&fit=crop" alt="Silhouette of figure in a hat" loading="lazy" />
-        <figcaption><span class="t">Silhouette I</span><span class="c">Fine Art</span></figcaption>
+        <figcaption><span class="t">Silhouette I</span><span class="c" data-lang-th="วิจิตรศิลป์" data-lang-en="Fine Art">วิจิตรศิลป์</span></figcaption>
       </figure>
       <figure class="shot g-wide reveal">
         <img src="https://images.unsplash.com/photo-1613485018329-6eb811141a47?w=1000&h=714&fit=crop" alt="Editorial figure in black against grey" loading="lazy" />
-        <figcaption><span class="t">Campaign No. 7</span><span class="c">Commercial</span></figcaption>
+        <figcaption><span class="t">Campaign No. 7</span><span class="c" data-lang-th="เชิงพาณิชย์" data-lang-en="Commercial">เชิงพาณิชย์</span></figcaption>
       </figure>
       <figure class="shot g-tall reveal">
         <img src="https://images.unsplash.com/photo-1642290687545-8ab7e6002472?w=700&h=930&fit=crop" alt="Black and white portrait of a woman" loading="lazy" />
-        <figcaption><span class="t">Vera</span><span class="c">Portrait</span></figcaption>
+        <figcaption><span class="t">Vera</span><span class="c" data-lang-th="บุคคล" data-lang-en="Portrait">บุคคล</span></figcaption>
       </figure>
     </div>
 
     <div class="work-foot">
-      <p>A small selection. Full project case studies and the complete archive are available on request.</p>
-      <a href="#contact" class="link-ghost">Request full archive <i data-lucide="arrow-right"></i></a>
+      <p data-lang-th="นี่เป็นเพียงส่วนหนึ่ง กรณีศึกษาโครงการฉบับเต็มและคลังผลงานทั้งหมดพร้อมให้ชมเมื่อร้องขอ" data-lang-en="A small selection. Full project case studies and the complete archive are available on request.">นี่เป็นเพียงส่วนหนึ่ง กรณีศึกษาโครงการฉบับเต็มและคลังผลงานทั้งหมดพร้อมให้ชมเมื่อร้องขอ</p>
+      <a href="#contact" class="link-ghost"><span data-lang-th="ขอชมคลังผลงานทั้งหมด" data-lang-en="Request full archive">ขอชมคลังผลงานทั้งหมด</span> <i data-lucide="arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -410,42 +432,42 @@
 <section class="sec-pad wrap" id="services">
   <div class="sec-head">
     <div>
-      <span class="eyebrow">What We Make</span>
-      <h2 class="reveal">Disciplines of the <em>studio</em>.</h2>
+      <span class="eyebrow" data-lang-th="สิ่งที่เราสร้างสรรค์" data-lang-en="What We Make">สิ่งที่เราสร้างสรรค์</span>
+      <h2 class="reveal"><span data-lang-th="แขนงงานของ" data-lang-en="Disciplines of the ">แขนงงานของ</span><em data-lang-th="สตูดิโอ" data-lang-en="studio">สตูดิโอ</em><span data-lang-th="" data-lang-en=".">.</span></h2>
     </div>
-    <span class="sec-idx">02 / Services</span>
+    <span class="sec-idx" data-lang-th="02 / บริการ" data-lang-en="02 / Services">02 / บริการ</span>
   </div>
 
   <div class="svc-list">
     <div class="svc reveal">
       <span class="svc-no">01</span>
       <div class="svc-main">
-        <h3>Portraiture</h3>
-        <p>Studio and location sittings for individuals, founders, and artists — composed in deep monochrome.</p>
+        <h3 data-lang-th="ภาพถ่ายบุคคล" data-lang-en="Portraiture">ภาพถ่ายบุคคล</h3>
+        <p data-lang-th="เซสชันถ่ายภาพในสตูดิโอและนอกสถานที่สำหรับบุคคลทั่วไป ผู้ก่อตั้ง และศิลปิน — จัดองค์ประกอบในโทนขาวดำเข้มข้น" data-lang-en="Studio and location sittings for individuals, founders, and artists — composed in deep monochrome.">เซสชันถ่ายภาพในสตูดิโอและนอกสถานที่สำหรับบุคคลทั่วไป ผู้ก่อตั้ง และศิลปิน — จัดองค์ประกอบในโทนขาวดำเข้มข้น</p>
       </div>
       <span class="svc-ic"><i data-lucide="user-round"></i></span>
     </div>
     <div class="svc reveal">
       <span class="svc-no">02</span>
       <div class="svc-main">
-        <h3>Commercial &amp; Advertising</h3>
-        <p>Campaign imagery and product narratives built to anchor brand identities across print and screen.</p>
+        <h3 data-lang-th="เชิงพาณิชย์และโฆษณา" data-lang-en="Commercial &amp; Advertising">เชิงพาณิชย์และโฆษณา</h3>
+        <p data-lang-th="ภาพแคมเปญและเรื่องราวของผลิตภัณฑ์ที่สร้างขึ้นเพื่อตอกย้ำอัตลักษณ์แบรนด์ทั้งบนสื่อสิ่งพิมพ์และหน้าจอ" data-lang-en="Campaign imagery and product narratives built to anchor brand identities across print and screen.">ภาพแคมเปญและเรื่องราวของผลิตภัณฑ์ที่สร้างขึ้นเพื่อตอกย้ำอัตลักษณ์แบรนด์ทั้งบนสื่อสิ่งพิมพ์และหน้าจอ</p>
       </div>
       <span class="svc-ic"><i data-lucide="megaphone"></i></span>
     </div>
     <div class="svc reveal">
       <span class="svc-no">03</span>
       <div class="svc-main">
-        <h3>Editorial &amp; Fashion</h3>
-        <p>Story-driven series for magazines and lookbooks, with a strong, graphic black-and-white signature.</p>
+        <h3 data-lang-th="บทบรรณาธิการและแฟชั่น" data-lang-en="Editorial &amp; Fashion">บทบรรณาธิการและแฟชั่น</h3>
+        <p data-lang-th="ซีรีส์ที่ขับเคลื่อนด้วยเรื่องราวสำหรับนิตยสารและลุคบุ๊ก ด้วยลายเซ็นขาวดำที่โดดเด่นและมีมิติเชิงกราฟิก" data-lang-en="Story-driven series for magazines and lookbooks, with a strong, graphic black-and-white signature.">ซีรีส์ที่ขับเคลื่อนด้วยเรื่องราวสำหรับนิตยสารและลุคบุ๊ก ด้วยลายเซ็นขาวดำที่โดดเด่นและมีมิติเชิงกราฟิก</p>
       </div>
       <span class="svc-ic"><i data-lucide="layout-template"></i></span>
     </div>
     <div class="svc reveal">
       <span class="svc-no">04</span>
       <div class="svc-main">
-        <h3>Fine Print &amp; Archival</h3>
-        <p>Hand-finished gelatin-toned prints, editioned and mounted for collectors and gallery walls.</p>
+        <h3 data-lang-th="งานพิมพ์วิจิตรและงานสะสม" data-lang-en="Fine Print &amp; Archival">งานพิมพ์วิจิตรและงานสะสม</h3>
+        <p data-lang-th="งานพิมพ์โทนเจลาตินที่ตกแต่งด้วยมือ จัดทำเป็นเอดิชันและประกอบกรอบสำหรับนักสะสมและผนังแกลเลอรี" data-lang-en="Hand-finished gelatin-toned prints, editioned and mounted for collectors and gallery walls.">งานพิมพ์โทนเจลาตินที่ตกแต่งด้วยมือ จัดทำเป็นเอดิชันและประกอบกรอบสำหรับนักสะสมและผนังแกลเลอรี</p>
       </div>
       <span class="svc-ic"><i data-lucide="image"></i></span>
     </div>
@@ -457,15 +479,15 @@
   <div class="feature-grid wrap sec-pad">
     <figure class="feature-fig reveal">
       <img src="https://images.unsplash.com/photo-1549882391-b7fb5ac67fcc?w=800&h=1000&fit=crop" alt="Photographer holding a camera in the studio" loading="lazy" />
-      <div class="stamp"><div class="n">Est.</div><div class="l">MMIX</div></div>
+      <div class="stamp"><div class="n" data-lang-th="ก่อตั้ง" data-lang-en="Est.">ก่อตั้ง</div><div class="l">MMIX</div></div>
     </figure>
     <div class="feature-body reveal">
-      <span class="eyebrow">Inside the Studio</span>
-      <h2>A room of <em>shadow</em> and patience.</h2>
-      <p>Shutter Studio was founded on a single conviction: that a photograph should hold its ground long after the moment passes. We keep the kit minimal and the lighting deliberate — one subject, one frame, fully considered.</p>
-      <p>Our practice spans intimate portraiture and large-scale commercial campaigns, but the language stays constant: clean lines, generous space, and the full tonal range of true black and white.</p>
+      <span class="eyebrow" data-lang-th="ภายในสตูดิโอ" data-lang-en="Inside the Studio">ภายในสตูดิโอ</span>
+      <h2><span data-lang-th="ห้องแห่ง" data-lang-en="A room of ">ห้องแห่ง</span><em data-lang-th="เงา" data-lang-en="shadow">เงา</em><span data-lang-th="และความอดทน" data-lang-en=" and patience.">และความอดทน</span></h2>
+      <p data-lang-th="Shutter Studio ก่อตั้งขึ้นบนความเชื่อเพียงหนึ่งเดียว: ภาพถ่ายที่ดีควรยืนหยัดอยู่ได้แม้เวลาผ่านไปนานหลังช่วงเวลานั้น เราใช้อุปกรณ์เท่าที่จำเป็นและจัดแสงอย่างตั้งใจ — หนึ่งตัวแบบ หนึ่งเฟรม ผ่านการพิจารณาอย่างถี่ถ้วน" data-lang-en="Shutter Studio was founded on a single conviction: that a photograph should hold its ground long after the moment passes. We keep the kit minimal and the lighting deliberate — one subject, one frame, fully considered.">Shutter Studio ก่อตั้งขึ้นบนความเชื่อเพียงหนึ่งเดียว: ภาพถ่ายที่ดีควรยืนหยัดอยู่ได้แม้เวลาผ่านไปนานหลังช่วงเวลานั้น เราใช้อุปกรณ์เท่าที่จำเป็นและจัดแสงอย่างตั้งใจ — หนึ่งตัวแบบ หนึ่งเฟรม ผ่านการพิจารณาอย่างถี่ถ้วน</p>
+      <p data-lang-th="งานของเราครอบคลุมตั้งแต่ภาพบุคคลที่เป็นส่วนตัวไปจนถึงแคมเปญเชิงพาณิชย์ขนาดใหญ่ แต่ภาษาของภาพยังคงเดิมเสมอ: เส้นสายที่สะอาด พื้นที่ว่างที่กว้างขวาง และช่วงโทนสีที่ครบถ้วนของขาวดำอันแท้จริง" data-lang-en="Our practice spans intimate portraiture and large-scale commercial campaigns, but the language stays constant: clean lines, generous space, and the full tonal range of true black and white.">งานของเราครอบคลุมตั้งแต่ภาพบุคคลที่เป็นส่วนตัวไปจนถึงแคมเปญเชิงพาณิชย์ขนาดใหญ่ แต่ภาษาของภาพยังคงเดิมเสมอ: เส้นสายที่สะอาด พื้นที่ว่างที่กว้างขวาง และช่วงโทนสีที่ครบถ้วนของขาวดำอันแท้จริง</p>
       <div class="sign">Daniela Voss</div>
-      <div class="role">Founder &amp; Lead Photographer</div>
+      <div class="role" data-lang-th="ผู้ก่อตั้งและช่างภาพหลัก" data-lang-en="Founder &amp; Lead Photographer">ผู้ก่อตั้งและช่างภาพหลัก</div>
     </div>
   </div>
 </section>
@@ -474,32 +496,32 @@
 <section class="process sec-pad wrap" id="process">
   <div class="sec-head">
     <div>
-      <span class="eyebrow">How We Work</span>
-      <h2 class="reveal">From brief to <em>print</em>.</h2>
+      <span class="eyebrow" data-lang-th="วิธีการทำงานของเรา" data-lang-en="How We Work">วิธีการทำงานของเรา</span>
+      <h2 class="reveal"><span data-lang-th="จากบรีฟสู่" data-lang-en="From brief to ">จากบรีฟสู่</span><em data-lang-th="งานพิมพ์" data-lang-en="print">งานพิมพ์</em><span data-lang-th="" data-lang-en=".">.</span></h2>
     </div>
-    <span class="sec-idx">03 / Process</span>
+    <span class="sec-idx" data-lang-th="03 / ขั้นตอน" data-lang-en="03 / Process">03 / ขั้นตอน</span>
   </div>
 
   <div class="steps">
     <div class="step reveal">
       <div class="num">01</div>
-      <h4>Conversation</h4>
-      <p>We start with intent — references, mood, and the single feeling the final frame must carry.</p>
+      <h4 data-lang-th="พูดคุย" data-lang-en="Conversation">พูดคุย</h4>
+      <p data-lang-th="เราเริ่มต้นด้วยเจตนา — ภาพอ้างอิง อารมณ์ และความรู้สึกเดียวที่เฟรมสุดท้ายต้องสื่อ" data-lang-en="We start with intent — references, mood, and the single feeling the final frame must carry.">เราเริ่มต้นด้วยเจตนา — ภาพอ้างอิง อารมณ์ และความรู้สึกเดียวที่เฟรมสุดท้ายต้องสื่อ</p>
     </div>
     <div class="step reveal">
       <div class="num">02</div>
-      <h4>Direction</h4>
-      <p>Lighting plans, wardrobe, and set are mapped so the shoot day runs on focus, not chaos.</p>
+      <h4 data-lang-th="กำกับ" data-lang-en="Direction">กำกับ</h4>
+      <p data-lang-th="วางแผนการจัดแสง เสื้อผ้า และฉาก เพื่อให้วันถ่ายดำเนินไปด้วยสมาธิ ไม่ใช่ความวุ่นวาย" data-lang-en="Lighting plans, wardrobe, and set are mapped so the shoot day runs on focus, not chaos.">วางแผนการจัดแสง เสื้อผ้า และฉาก เพื่อให้วันถ่ายดำเนินไปด้วยสมาธิ ไม่ใช่ความวุ่นวาย</p>
     </div>
     <div class="step reveal">
       <div class="num">03</div>
-      <h4>The Sitting</h4>
-      <p>A calm, unhurried session. We shoot for the frame that needs no defense.</p>
+      <h4 data-lang-th="การถ่ายจริง" data-lang-en="The Sitting">การถ่ายจริง</h4>
+      <p data-lang-th="เซสชันที่สงบและไม่เร่งรีบ เราถ่ายเพื่อให้ได้เฟรมที่ไม่ต้องการคำอธิบายใด ๆ" data-lang-en="A calm, unhurried session. We shoot for the frame that needs no defense.">เซสชันที่สงบและไม่เร่งรีบ เราถ่ายเพื่อให้ได้เฟรมที่ไม่ต้องการคำอธิบายใด ๆ</p>
     </div>
     <div class="step reveal">
       <div class="num">04</div>
-      <h4>The Print</h4>
-      <p>Hand-graded monochrome edits, delivered digitally and as archival prints on request.</p>
+      <h4 data-lang-th="งานพิมพ์" data-lang-en="The Print">งานพิมพ์</h4>
+      <p data-lang-th="ภาพขาวดำที่ปรับแต่งด้วยมือ ส่งมอบในรูปแบบดิจิทัลและงานพิมพ์สำหรับสะสมเมื่อร้องขอ" data-lang-en="Hand-graded monochrome edits, delivered digitally and as archival prints on request.">ภาพขาวดำที่ปรับแต่งด้วยมือ ส่งมอบในรูปแบบดิจิทัลและงานพิมพ์สำหรับสะสมเมื่อร้องขอ</p>
     </div>
   </div>
 </section>
@@ -510,9 +532,9 @@
     <div class="stars">
       <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
     </div>
-    <span class="eyebrow">Client Word</span>
-    <blockquote class="reveal">They gave our brand a <em>presence</em> we didn&rsquo;t know it had — every image feels permanent.</blockquote>
-    <div class="by">Helena Ruiz &mdash; Creative Director, Atelier Nord</div>
+    <span class="eyebrow" data-lang-th="เสียงจากลูกค้า" data-lang-en="Client Word">เสียงจากลูกค้า</span>
+    <blockquote class="reveal"><span data-lang-th="พวกเขามอบ" data-lang-en="They gave our brand a ">พวกเขามอบ</span><em data-lang-th="ตัวตน" data-lang-en="presence">ตัวตน</em><span data-lang-th="ให้แบรนด์ของเราอย่างที่เราไม่เคยรู้ว่ามี — ทุกภาพให้ความรู้สึกที่คงทนถาวร" data-lang-en=" we didn’t know it had — every image feels permanent.">ให้แบรนด์ของเราอย่างที่เราไม่เคยรู้ว่ามี — ทุกภาพให้ความรู้สึกที่คงทนถาวร</span></blockquote>
+    <div class="by" data-lang-th="Helena Ruiz — ครีเอทีฟไดเรกเตอร์, Atelier Nord" data-lang-en="Helena Ruiz — Creative Director, Atelier Nord">Helena Ruiz — ครีเอทีฟไดเรกเตอร์, Atelier Nord</div>
   </div>
 </section>
 
@@ -520,43 +542,43 @@
 <section class="contact sec-pad wrap" id="contact">
   <div class="contact-grid">
     <div class="reveal">
-      <span class="eyebrow">Booking</span>
-      <h2>Let&rsquo;s make<br><em>the frame</em>.</h2>
-      <p class="contact-lead">Tell us about the portrait or campaign you have in mind. We reply to every enquiry within two business days.</p>
+      <span class="eyebrow" data-lang-th="การจอง" data-lang-en="Booking">การจอง</span>
+      <h2><span data-lang-th="มาสร้าง" data-lang-en="Let’s make">มาสร้าง</span><br><em data-lang-th="เฟรมนั้น" data-lang-en="the frame">เฟรมนั้น</em><span data-lang-th="กัน" data-lang-en=".">กัน</span></h2>
+      <p class="contact-lead" data-lang-th="บอกเล่าเกี่ยวกับภาพบุคคลหรือแคมเปญที่คุณวาดไว้ในใจ เราตอบกลับทุกคำถามภายในสองวันทำการ" data-lang-en="Tell us about the portrait or campaign you have in mind. We reply to every enquiry within two business days.">บอกเล่าเกี่ยวกับภาพบุคคลหรือแคมเปญที่คุณวาดไว้ในใจ เราตอบกลับทุกคำถามภายในสองวันทำการ</p>
       <div class="contact-info">
         <div class="info-row"><i data-lucide="map-pin"></i> 218 Wythe Avenue, Brooklyn, NY</div>
         <div class="info-row"><i data-lucide="mail"></i> studio@shutterstudio.com</div>
         <div class="info-row"><i data-lucide="phone"></i> +1 (718) 555-0142</div>
-        <div class="info-row"><i data-lucide="clock"></i> Tue&ndash;Sat, 9am &ndash; 6pm</div>
+        <div class="info-row"><i data-lucide="clock"></i> <span data-lang-th="อังคาร–เสาร์, 9:00 – 18:00 น." data-lang-en="Tue–Sat, 9am – 6pm">อังคาร–เสาร์, 9:00 – 18:00 น.</span></div>
       </div>
     </div>
 
     <form class="reveal" id="bookForm" novalidate>
       <div class="field-row">
         <div class="field">
-          <label for="name">Name</label>
-          <input id="name" type="text" placeholder="Your full name" required />
+          <label for="name" data-lang-th="ชื่อ" data-lang-en="Name">ชื่อ</label>
+          <input id="name" type="text" placeholder="ชื่อ-นามสกุลของคุณ" data-lang-th="ชื่อ-นามสกุลของคุณ" data-lang-en="Your full name" required />
         </div>
         <div class="field">
-          <label for="email">Email</label>
+          <label for="email" data-lang-th="อีเมล" data-lang-en="Email">อีเมล</label>
           <input id="email" type="email" placeholder="you@email.com" required />
         </div>
       </div>
       <div class="field">
-        <label for="type">Type of Session</label>
+        <label for="type" data-lang-th="ประเภทเซสชัน" data-lang-en="Type of Session">ประเภทเซสชัน</label>
         <select id="type">
-          <option>Portrait</option>
-          <option>Commercial &amp; Advertising</option>
-          <option>Editorial &amp; Fashion</option>
-          <option>Fine Print &amp; Archival</option>
+          <option data-lang-th="ภาพถ่ายบุคคล" data-lang-en="Portrait">ภาพถ่ายบุคคล</option>
+          <option data-lang-th="เชิงพาณิชย์และโฆษณา" data-lang-en="Commercial &amp; Advertising">เชิงพาณิชย์และโฆษณา</option>
+          <option data-lang-th="บทบรรณาธิการและแฟชั่น" data-lang-en="Editorial &amp; Fashion">บทบรรณาธิการและแฟชั่น</option>
+          <option data-lang-th="งานพิมพ์วิจิตรและงานสะสม" data-lang-en="Fine Print &amp; Archival">งานพิมพ์วิจิตรและงานสะสม</option>
         </select>
       </div>
       <div class="field">
-        <label for="msg">Project Details</label>
-        <textarea id="msg" placeholder="Tell us about your vision, timeline, and any references…"></textarea>
+        <label for="msg" data-lang-th="รายละเอียดโครงการ" data-lang-en="Project Details">รายละเอียดโครงการ</label>
+        <textarea id="msg" placeholder="เล่าให้เราฟังเกี่ยวกับวิสัยทัศน์ ช่วงเวลา และภาพอ้างอิงต่าง ๆ ของคุณ…" data-lang-th="เล่าให้เราฟังเกี่ยวกับวิสัยทัศน์ ช่วงเวลา และภาพอ้างอิงต่าง ๆ ของคุณ…" data-lang-en="Tell us about your vision, timeline, and any references…"></textarea>
       </div>
-      <button type="submit" class="submit">Send Enquiry <i data-lucide="arrow-right"></i></button>
-      <p class="form-note" id="formNote">Thank you — your enquiry is on its way. We&rsquo;ll be in touch shortly.</p>
+      <button type="submit" class="submit"><span data-lang-th="ส่งคำถาม" data-lang-en="Send Enquiry">ส่งคำถาม</span> <i data-lucide="arrow-right"></i></button>
+      <p class="form-note" id="formNote" data-lang-th="ขอบคุณ — คำถามของคุณกำลังถูกส่งแล้ว เราจะติดต่อกลับโดยเร็ว" data-lang-en="Thank you — your enquiry is on its way. We’ll be in touch shortly.">ขอบคุณ — คำถามของคุณกำลังถูกส่งแล้ว เราจะติดต่อกลับโดยเร็ว</p>
     </form>
   </div>
 </section>
@@ -568,28 +590,28 @@
       <div class="foot-logo">Shutter<br><em>Studio</em></div>
       <div class="foot-cols">
         <div class="foot-col">
-          <h5>Navigate</h5>
-          <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="#studio">Studio</a>
-          <a href="#process">Process</a>
+          <h5 data-lang-th="เมนู" data-lang-en="Navigate">เมนู</h5>
+          <a href="#work" data-lang-th="ผลงาน" data-lang-en="Work">ผลงาน</a>
+          <a href="#services" data-lang-th="บริการ" data-lang-en="Services">บริการ</a>
+          <a href="#studio" data-lang-th="สตูดิโอ" data-lang-en="Studio">สตูดิโอ</a>
+          <a href="#process" data-lang-th="ขั้นตอนการทำงาน" data-lang-en="Process">ขั้นตอนการทำงาน</a>
         </div>
         <div class="foot-col">
-          <h5>Studio</h5>
+          <h5 data-lang-th="สตูดิโอ" data-lang-en="Studio">สตูดิโอ</h5>
           <p>218 Wythe Avenue</p>
           <p>Brooklyn, NY 11249</p>
           <a href="mailto:studio@shutterstudio.com">studio@shutterstudio.com</a>
         </div>
         <div class="foot-col">
-          <h5>Hours</h5>
-          <p>Tue &ndash; Sat</p>
-          <p>9am &ndash; 6pm</p>
-          <p>By appointment</p>
+          <h5 data-lang-th="เวลาทำการ" data-lang-en="Hours">เวลาทำการ</h5>
+          <p data-lang-th="อังคาร – เสาร์" data-lang-en="Tue – Sat">อังคาร – เสาร์</p>
+          <p data-lang-th="9:00 – 18:00 น." data-lang-en="9am – 6pm">9:00 – 18:00 น.</p>
+          <p data-lang-th="โดยนัดหมายล่วงหน้า" data-lang-en="By appointment">โดยนัดหมายล่วงหน้า</p>
         </div>
       </div>
     </div>
     <div class="foot-bottom">
-      <p>&copy; 2026 Shutter Studio. Portrait &amp; Commercial Photography.</p>
+      <p data-lang-th="© 2026 Shutter Studio ภาพถ่ายบุคคลและเชิงพาณิชย์" data-lang-en="© 2026 Shutter Studio. Portrait &amp; Commercial Photography.">© 2026 Shutter Studio ภาพถ่ายบุคคลและเชิงพาณิชย์</p>
       <div class="socials">
         <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
         <a href="#" aria-label="Behance"><i data-lucide="dribbble"></i></a>
@@ -600,6 +622,31 @@
 </footer>
 
 <script>
+  // ---------- Language switcher (Thai default) ----------
+  const LANG_KEY = 'shutter-lang';
+  function setLang(lang){
+    if (lang !== 'th' && lang !== 'en') lang = 'th';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-lang-th][data-lang-en]').forEach(el => {
+      const val = el.getAttribute('data-lang-' + lang);
+      if (val === null) return;
+      const tag = el.tagName;
+      if (tag === 'META') el.setAttribute('content', val);
+      else if (tag === 'INPUT' || tag === 'TEXTAREA') el.setAttribute('placeholder', val);
+      else el.textContent = val;
+    });
+    document.querySelectorAll('.lang-btn').forEach(b =>
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang)
+    );
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+  }
+  let savedLang = 'th';
+  try { savedLang = localStorage.getItem(LANG_KEY) || 'th'; } catch (e) {}
+  setLang(savedLang);
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.addEventListener('click', () => setLang(b.getAttribute('data-lang')))
+  );
+
   // Header solid on scroll
   const hdr = document.getElementById('hdr');
   const onScroll = () => hdr.classList.toggle('solid', window.scrollY > 40);
