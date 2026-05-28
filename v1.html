@@ -275,7 +275,7 @@
   .steps p{font-size:13.5px;color:#54534f;max-width:44ch}
 
   /* ---------- DARK QUOTE ---------- */
-  .quote-band{background:var(--ink);color:var(--paper);max-width:none;margin:0;width:100%}
+  .quote-band{background:var(--ink);color:var(--paper);max-width:none;margin:0;width:100%;padding:0}
   .quote-inner{max-width:var(--maxw);margin:0 auto;padding:clamp(80px,12vh,150px) var(--pad);text-align:center}
   .quote-inner .mark i{width:40px;height:40px;color:var(--paper);opacity:.5}
   .quote-inner blockquote{
@@ -352,9 +352,9 @@
     .split{grid-template-columns:1fr}
     .cta{grid-template-columns:1fr}
     .gallery{grid-template-columns:repeat(6,1fr)}
-    .g-a{grid-column:span 6}.g-b{grid-column:span 6}
+    .g-a{grid-column:span 6}.g-b{grid-column:span 6;aspect-ratio:16/10}
     .g-c,.g-d,.g-e{grid-column:span 3}
-    .g-f{grid-column:span 6}.g-g{grid-column:span 6}
+    .g-f{grid-column:span 6;aspect-ratio:16/10}.g-g{grid-column:span 6}
     .foot{grid-template-columns:1fr 1fr}
     .foot .brand-col{grid-column:1/-1}
   }
